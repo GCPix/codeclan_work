@@ -1,0 +1,19 @@
+design concerns
+
+1 back end code independent of front end
+2. Don't Repeat Yourself
+3. Persist Data
+
+Models hold business logic ie classes so 1 above
+
+Controller
+links model and view.
+on initialisation the model will check what it needs to do, ie load images, counts etc.  The controller then 'injects' this into the view
+
+
+Views
+HTML documents, so funnily enough what people see
+
+CRUD - Create, Read, Update, Delete
+
+type psql to access

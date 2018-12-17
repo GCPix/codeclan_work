@@ -1,0 +1,58 @@
+creating a database
+
+database will have columns and rows, column headers can be called fields
+
+in psql you can type CREATE DATABASE star_wars
+or just from terminal createdb star_wars, they both do the same thing
+
+DROP (be very careful, this will delete the whole database)
+
+DROP TABLE, as above but for a table
+
+Where a table has a relationship with another table (ie field in table 2 has foreign key from table1.  DROP TABLE tablename CASCADE;
+
+strings = VARCHAR, this is a fixed length text always use single quotes as "" have a different purpose (don't worry about what this is yet)
+text where it is a large amount of text
+integers = INT, same as usual
+true/false = BOOLEAN
+
+running script - psql -d star_wars -f star_wars.sql do this from the main command line, NOT inside psql interpreter
+
+psql as that is what we are using as interpreter
+-d indicates the database you want
+-f is the filename we are using (.sql)
+
+to query your database go into psql and select the database you want to look into.
+
+CREATE TABLE tablename (field1 TYPE, field2 TYPE, field3 TYPE)
+
+-- allows you to add text to an sql file
+
+INSERT INTO table(fields1, fields2, fields3) = adds to the table VALUES (actual detail in same order as specified)
+
+\c in the psql interpreter will allow the prompt to look in the database requests ie \c star_wars
+
+SELECT fields FROM table t WHERE t.field condition ie = 'text' or < 0
+
+LIKE and % work together for wild card searches. ie SELECT * FROM characters c WHERE c.name LIKE '%WAN%';
+
+UPDATE table SET (field1, field2) = (value1, value2) WHERE field = value
+
+Can also use AND/OR/NOT as part of the WHERE clause
+
+ORDER BY
+
+GROUP BY
+
+DELETE FROM tablename t WHERE t.field = condition;
+
+BETWEEN as part of WHEN, if BETWEEN int1 and int2 it will delete everything in the range including int1 and int2.  if BETWEEN 'A' and 'C' it will delete anything beginning A or B but NOT C!
+
+Associations (1:1, 1:many, many:many)
+
+1:1 and 1:many can utilise a foreign key to create association
+
+many:many, create a middle table that allows you to create relationship more specifically
+
+Constraints
+NOT NULL ensures the values are completed before item added, it is a compulsory field

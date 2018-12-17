@@ -1,0 +1,40 @@
+.grid{
+border:1px solid mediumaquamarine;
+}
+
+.grid-row{
+  display: flex;
+  flex-direction: column;
+}
+
+.cell {
+  flex: 1; /*tells it to keep each box the same size */
+  border: 1px solid tomato;
+  font-size: 24px;
+}
+
+/*below is to tell them what to do if small screen ie mobile*/
+@media all and (min-width: 400px) {
+  .cel{
+    font-size: 16px;
+  }
+  .grid-row-sm {
+    flex-direction: row;
+  }
+}
+
+@media all and (min-width: 720px) {
+  .cell{
+  font-size: 20px
+  }
+
+  .grid-row-md{
+    flex-direction: row;
+  }
+}
+
+@media all and (min-width: 960px){
+
+  .grid-row-lg{
+    flex-direction: row;
+  }
